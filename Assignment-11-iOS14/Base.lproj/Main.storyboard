@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -32,7 +31,7 @@
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="calculateButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9WI-t1-HU3"/>
+                                    <action selector="calculateButtonDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9WI-t1-HU3"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tza-N3-dV6">
@@ -68,11 +67,11 @@
                     </view>
                     <connections>
                         <outlet property="calculateButton" destination="5uU-jl-GZY" id="RKl-sB-vZW"/>
+                        <outlet property="firstNumberTextField" destination="tza-N3-dV6" id="JPs-L7-Mgb"/>
                         <outlet property="resultLabel" destination="ByC-ff-hg2" id="bdy-Mb-7u7"/>
+                        <outlet property="secondNumberTextField" destination="LrC-B0-QmT" id="SKY-zJ-qmI"/>
                         <outlet property="stateLabel" destination="kYi-gW-ktO" id="gFQ-RF-Ayf"/>
                         <outlet property="switchButton" destination="Ngw-lC-aU1" id="8SX-vi-qSf"/>
-                        <outlet property="textField1" destination="tza-N3-dV6" id="JPs-L7-Mgb"/>
-                        <outlet property="textField2" destination="LrC-B0-QmT" id="SKY-zJ-qmI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

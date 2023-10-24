@@ -7,15 +7,15 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
     
     //MARK: - IBOutlets
-    @IBOutlet weak var stateLabel: UILabel!
-    @IBOutlet weak var switchButton: UISwitch!
-    @IBOutlet weak var textField1: UITextField!
-    @IBOutlet weak var textField2: UITextField!
-    @IBOutlet weak var calculateButton: UIButton!
-    @IBOutlet weak var resultLabel: UILabel!
+    @IBOutlet private weak var stateLabel: UILabel!
+    @IBOutlet private weak var switchButton: UISwitch!
+    @IBOutlet private weak var firstNumberTextField: UITextField!
+    @IBOutlet private weak var secondNumberTextField: UITextField!
+    @IBOutlet private weak var calculateButton: UIButton!
+    @IBOutlet private weak var resultLabel: UILabel!
     
     //MARK: - LifeCycle
     override func viewDidLoad() {
@@ -24,8 +24,7 @@ class ViewController: UIViewController {
     }
     
     //MARK: - IBActions
-    //set and update switch states & label accordingly
-    @IBAction func switchStateChanged(_ sender: UISwitch) {
+    @IBAction private func switchStateChanged(_ sender: UISwitch) {
         if sender.isOn {
             stateLabel.text = "GCD" //Greatest common divisor
         } else {
@@ -34,10 +33,9 @@ class ViewController: UIViewController {
         }
     }
     
-    //make the "calculate" button functional
-    @IBAction func calculateButtonPressed(_ sender: UIButton) {
-        let number1 = convertToInt(textField: textField1)
-        let number2 = convertToInt(textField: textField2)
+    @IBAction private func calculateButtonDidTap(_ sender: UIButton) {
+        let number1 = convertToInt(textField: firstNumberTextField)
+        let number2 = convertToInt(textField: secondNumberTextField)
         let result: Int
         
         if number1 != nil && number2 != nil && switchButton.isOn == true {
@@ -52,11 +50,7 @@ class ViewController: UIViewController {
     }
     
     //MARK: - functions
-    
-    
-    
-    //converting string to int (if it's possible)
-    func convertToInt(textField: UITextField) -> Int? {
+    private func convertToInt(textField: UITextField) -> Int? {
         textField.backgroundColor = .white
         if let convertedToInt = Int(textField.text!) {
             return convertedToInt
@@ -66,8 +60,7 @@ class ViewController: UIViewController {
         }
     }
     
-    //Greatest Common Divisor (GCD) calculator
-    func calculateGCD(num1: Int, num2: Int) -> Int {
+    private func calculateGCD(num1: Int, num2: Int) -> Int {
         var number1 = num1
         var number2 = num2
         
@@ -79,9 +72,7 @@ class ViewController: UIViewController {
         return number1
     }
     
-    //Greatest Common Divisor (GCD) calculator
-    func calculateLCM(num1: Int, num2: Int) -> Int {
-        
+    private func calculateLCM(num1: Int, num2: Int) -> Int {
         let multiplication = num1 * num2
         let GCD = calculateGCD(num1: num1, num2: num2)
         let result = multiplication / GCD
